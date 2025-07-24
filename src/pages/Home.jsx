@@ -1,21 +1,29 @@
 // File: src/pages/Home.jsx
 import React from 'react';
-
+import { motion } from 'framer-motion';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Home() {
   return (
-    <section className="home">
-      <div className="hero">
-        <h1>Welcome to 16 Ways</h1>
-        <p>Your gateway to global import & export excellence</p>
-      </div>
-      <div className="home-intro">
-        <h2>What We Do</h2>
-        <p>
-          At <strong>16 Ways</strong>, we specialize in delivering high-quality import and export solutions
-          across multiple industries. Whether you're sourcing premium products or expanding your global market,
-          our logistics expertise and global network make it seamless and reliable.
-        </p>
+    <section className="min-vh-100 bg-black d-flex flex-column align-items-center justify-content-center py-5 position-relative">
+      <div className="position-absolute top-0 start-0 w-100 h-100" style={{background: 'linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 100%)', zIndex: 0}}></div>
+      <div className="container position-relative z-1 text-center">
+        <motion.h1
+          className="display-3 fw-bold text-warning mb-3"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          Welcome to <span className="text-warning">16 Ways</span>
+        </motion.h1>
+        <motion.p
+          className="lead text-light mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+        >
+          Excellence in Import & Export Solutions
+        </motion.p>
       </div>
     </section>
   );
